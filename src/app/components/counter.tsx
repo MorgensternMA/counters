@@ -28,7 +28,9 @@ const Counter: React.FC<CounterProps> = ({ initialCount ,id, onDelete, color}) =
         throw new Error('Error updating counter');
       } else {
         const data = await response.json();
-        setCount(data.contador)
+        if(count != data.contador){
+          setCount(data.contador)
+        }
       }
     } catch (error) {
       console.error('Error updating counter:', error);
@@ -52,7 +54,9 @@ const Counter: React.FC<CounterProps> = ({ initialCount ,id, onDelete, color}) =
           throw new Error('Error updating counter');
         } else {
           const data = await response.json();
-          setCount(data.contador)
+          if(count != data.contador){
+            setCount(data.contador)
+          }
         }
       } catch (error) {
         console.error('Error updating counter:', error);
