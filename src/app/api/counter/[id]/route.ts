@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import { error } from "console";
-import { preloadStyle } from "next/dist/server/app-render/entry-base";
+import prisma from "@/lib/prisma";
 
 interface Params { params: { id: number } }
-const prisma = new PrismaClient();
 
 export async function DELETE(request: Request, { params }: Params) {
     try {
