@@ -7,7 +7,7 @@ import { HexColorPicker } from "react-colorful";
 export default function Home() {
   const [counters, setCounters] = useState<{ id: number; contador:number; color: string; }[]>([]);
   const [showColorPicker, setShowColorPicker] = useState(false);
-  const [color, setColor] = useState('#ffffff');
+  const [color, setColor] = useState('#2596be');
 
   const handleChangeColor = (newColor: string) => {
     setColor(newColor); 
