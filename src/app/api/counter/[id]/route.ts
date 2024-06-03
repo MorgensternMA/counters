@@ -29,7 +29,9 @@ export async function PUT(request: Request, { params }: Params) {
                 id: Number(params.id),
             },
             data: {
-                contador: data.count
+                contador: {
+                    increment: data.action == "increment"? 1 : -1
+                }
             }
         })
         console.log(updated)

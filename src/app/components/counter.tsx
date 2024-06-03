@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState } from 'react';
 
 interface CounterProps {
@@ -22,7 +21,7 @@ const Counter: React.FC<CounterProps> = ({ initialCount ,id, onDelete, color}) =
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          count: count + 1
+          action: "increment"
         })
       });
       if (!response.ok) {
@@ -46,7 +45,7 @@ const Counter: React.FC<CounterProps> = ({ initialCount ,id, onDelete, color}) =
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            count: count - 1
+            action: "decrement"
           })
         });
         if (!response.ok) {
